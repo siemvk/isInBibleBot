@@ -38,4 +38,11 @@ function isInBible(input: string): bibleStats | false {
     return stats
 }
 
-console.log(isInBible("skibidi"))
+function rmNotBible(wow: string) {
+    let wordlist = wow.split(/[\W_]+/).filter(Boolean).filter((v) => { return words.has(v.toLowerCase()) });
+    return wordlist.toString().replaceAll(",", " ")
+}
+
+function randomBibleWord() {
+    return SLOW_WORDS[Math.floor(Math.random() * SLOW_WORDS.length)]
+}
